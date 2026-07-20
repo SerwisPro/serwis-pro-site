@@ -1,5 +1,5 @@
 // Replace only this value with the Measurement ID saved in Google Analytics
-const GA_MEASUREMENT_ID = "G-WPISZ_TUTAJ";
+const GA_MEASUREMENT_ID = "G-P978VZVHR2";
 const ANALYTICS_CONSENT_KEY = "serwis_pro_analytics_consent";
 let analyticsLoaded = false;
 
