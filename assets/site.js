@@ -39,3 +39,40 @@ document.querySelectorAll(".nav a[data-section]").forEach((link) => {
     link.setAttribute("aria-current", "page");
   }
 });
+
+const reviewsDialog = document.getElementById("reviews-dialog");
+const reviewsDialogList = reviewsDialog?.querySelector(".review-dialog-list");
+let reviewTrigger = null;
+
+if (reviewsDialog && reviewsDialogList) {
+  document.querySelectorAll("[data-review-target]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const target = document.getElementById(button.dataset.reviewTarget);
+      if (!target) return;
+
+      reviewTrigger = button;
+      reviewsDialog.showModal();
+      document.body.classList.add("dialog-open");
+      reviewsDialogList.scrollTop = 0;
+      const listTop = reviewsDialogList.getBoundingClientRect().top;
+      const targetTop = target.getBoundingClientRect().top;
+      reviewsDialogList.scrollTop = Math.max(0, targetTop - listTop);
+      target.focus({ preventScroll: true });
+    });
+  });
+
+  reviewsDialog.querySelector(".review-dialog-close")?.addEventListener("click", () => {
+    reviewsDialog.close();
+  });
+
+  reviewsDialog.addEventListener("click", (event) => {
+    if (event.target === reviewsDialog) {
+      reviewsDialog.close();
+    }
+  });
+
+  reviewsDialog.addEventListener("close", () => {
+    document.body.classList.remove("dialog-open");
+    reviewTrigger?.focus();
+  });
+}
