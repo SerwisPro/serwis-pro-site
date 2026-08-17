@@ -404,3 +404,18 @@ function initArticleTocPreviews(){
   window.addEventListener("scroll",()=>{if(activeLink&&!preview.hidden)positionPreview(activeLink)},{passive:true});
 }
 initArticleTocPreviews();
+
+// Keep a number together with the first following word in Poradnik article H1s.
+// Examples: "3 miejsca", "4 możliwe", "6 sygnałów".
+function keepArticleHeadingNumberWithWord() {
+  document.querySelectorAll('.article-header h1').forEach((heading) => {
+    const walker = document.createTreeWalker(heading, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach((node) => {
+      node.nodeValue = node.nodeValue.replace(/(\d+)\s+([^\s]+)/g, '$1\u00A0$2');
+    });
+  });
+}
+keepArticleHeadingNumberWithWord();

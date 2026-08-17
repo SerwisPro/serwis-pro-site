@@ -226,8 +226,11 @@ body.dialog-open { overflow: hidden; }
 .prose p { margin-top: 12px; color: var(--muted); }
 
 .article-header { padding: 44px 0 36px; background: #f7fafc; border-bottom: 1px solid var(--line); }
-.article-wrap { max-width: 1084px; }
-.article-header .article-wrap h1 { max-width: 100%; }
+.article-wrap { max-width: none; }
+.article-header .article-wrap h1,
+.article-header .article-answer {
+  max-width: 1084px;
+}
 .article-back { display: inline-flex; align-items: center; margin-bottom: 26px; color: var(--navy); font-weight: 800; text-decoration: none; }
 .article-back:hover { color: var(--blue); }
 .article-answer { margin-top: 22px; color: var(--ink); font-size: 20px; font-weight: 700; }
@@ -456,4 +459,12 @@ body.dialog-open { overflow: hidden; }
   .article-content h2 { margin-top:24px; }
   .article-content h3 { margin-top:18px; }
   .faq-section { padding-top:20px; }
+}
+
+/* Systemic Poradnik heading rules */
+.article-header .eyebrow {
+  display: none;
+}
+.article-header h1 {
+  text-wrap: balance;
 }
