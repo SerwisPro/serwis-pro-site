@@ -104,7 +104,12 @@ section { padding: 44px 0; }
     url("./hero-window-v2.png") right center / cover no-repeat;
   border-bottom: 1px solid var(--line);
 }
-.home-hero-content { max-width: 720px; padding: 0; }
+.home-hero-content { max-width: 650px; padding: 0; }
+.home-hero .lead {
+  max-width: 625px;
+  font-size: clamp(17px, 1.65vw, 19px);
+  line-height: 1.58;
+}
 .page-hero { padding: 44px 0; background: linear-gradient(180deg, #f7fafc, #fff); border-bottom: 1px solid var(--line); }
 .page-hero-grid { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(260px, .7fr); align-items: center; gap: 64px; }
 .hero-note { padding: 26px; border-top: 4px solid var(--blue); background: #fff; box-shadow: var(--shadow); }
