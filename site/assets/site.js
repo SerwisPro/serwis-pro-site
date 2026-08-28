@@ -136,9 +136,10 @@ function createConsentInterface() {
       cursor: pointer;
     }
     @media (max-width: 560px) {
-      .cookie-consent { bottom: 10px; width: calc(100% - 20px); padding: 18px }
+      .cookie-consent { bottom: 70px; width: calc(100% - 20px); padding: 18px }
       .cookie-consent__actions { display: grid }
       .cookie-consent__button { width: 100% }
+      .cookie-settings { bottom: 70px }
     }
   `;
   document.head.appendChild(style);
