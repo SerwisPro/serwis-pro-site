@@ -468,3 +468,38 @@ body.dialog-open { overflow: hidden; }
 .article-header h1 {
   text-wrap: balance;
 }
+
+/* Realizacje: complete photographs, readable without JavaScript. */
+.realizations-grid { display: grid; gap: 28px; padding-top: 36px; padding-bottom: 44px; }
+.realization-card { min-width: 0; padding: 28px; border: 1px solid var(--line); border-radius: 5px; background: var(--paper); scroll-margin-top: 96px; }
+.before-after-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; align-items: start; }
+.realization-photo { min-width: 0; margin: 0; }
+.photo-label { padding: 8px 14px; background: var(--navy); color: white; font-weight: 700; border-radius: 5px 5px 0 0; }
+.realization-photo:nth-child(2) .photo-label { background: var(--blue-dark); }
+.realization-image { display: flex; align-items: flex-start; justify-content: center; background: var(--soft); }
+.case-image { width: 100%; height: auto; }
+.realization-photo figcaption { padding-top: 10px; color: var(--muted); font-size: 14px; }
+.realization-caption { margin-top: 18px; color: var(--muted); font-size: 14px; }
+.home-realizations-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.home-realization-card { min-width: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 5px; text-decoration: none; background: var(--paper); }
+.home-realization-card:hover { border-color: var(--blue-dark); }
+.home-realization-card:focus-visible { outline: 3px solid var(--blue-dark); outline-offset: 4px; }
+.home-realization-image { aspect-ratio: 16 / 10; display: flex; justify-content: center; align-items: center; background: var(--soft); }
+.home-case-image { width: 100%; height: 100%; object-fit: contain; }
+.home-realization-copy { padding: 20px; }
+.home-realization-copy .text-link { margin-top: 18px; }
+/* Seven menu entries need the compact navigation at tablet widths. */
+@media (min-width: 941px) and (max-width: 1080px) {
+  .menu-button { display: block; }
+  .nav { position: absolute; left: 0; right: 0; top: 100%; display: none; padding: 12px 20px 20px; background: #fff; border-bottom: 1px solid var(--line); box-shadow: var(--shadow); }
+  .nav.is-open { display: grid; }
+  .nav > a:not(.btn) { padding: 12px 4px; border-bottom: 1px solid var(--line); }
+  .nav > a:not(.btn)::after { display: none; }
+  .nav > a[aria-current="page"] { border-left: 3px solid var(--blue); padding-left: 12px; }
+}
+@media (max-width: 720px) {
+  .before-after-grid, .home-realizations-grid { grid-template-columns: minmax(0, 1fr); }
+  .realization-card { padding: 18px; scroll-margin-top: 84px; }
+  .realizations-grid { gap: 20px; padding-top: 24px; padding-bottom: 38px; }
+  .before-after-grid { gap: 22px; }
+}
