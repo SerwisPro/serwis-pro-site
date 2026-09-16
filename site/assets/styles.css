@@ -503,3 +503,39 @@ body.dialog-open { overflow: hidden; }
   .realizations-grid { gap: 20px; padding-top: 24px; padding-bottom: 38px; }
   .before-after-grid { gap: 22px; }
 }
+
+/* Scoped presentation of the Realizacje page. */
+.page-realizacje .page-hero .lead {
+  max-width: 1120px;
+  width: 100%;
+}
+.page-realizacje .realization-card .section-head {
+  max-width: none;
+  width: 100%;
+}
+.page-realizacje .before-after-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.page-realizacje .realization-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--soft);
+}
+.page-realizacje .case-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+/* Keep the relevant hardware and handle details in the portrait crops. */
+.page-realizacje #realizacja-05 .realization-photo:first-child .case-image { object-position: center 46%; }
+.page-realizacje #realizacja-05 .realization-photo:last-child .case-image { object-position: center 56%; }
+.page-realizacje #realizacja-drewniane-okno .realization-photo:first-child .case-image { object-position: center 30%; }
+.page-realizacje #realizacja-drewniane-okno .realization-photo:last-child .case-image { object-position: center 40%; }
+@media (max-width: 720px) {
+  .page-realizacje .before-after-grid { grid-template-columns: minmax(0, 1fr); }
+}
